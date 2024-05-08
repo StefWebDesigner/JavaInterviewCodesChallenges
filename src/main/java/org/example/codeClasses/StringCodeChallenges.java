@@ -15,8 +15,19 @@ public class StringCodeChallenges {
         System.out.println("Substring with the second half of the expression " + substtingUpperExpression);
     }
 
-    public void encryptionCodeChallenge(){
+    public String encryptionCodeChallenge(String message, int shiftKey){
+        message = message.toLowerCase();
+        String result = "";
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
+        for(int i = 0; i < message.length(); i++){
+            int charPosition = alphabet.indexOf(message.charAt(i));
+            int keyVal = (shiftKey + charPosition) % 26;
+            char replaceKey = alphabet.charAt(keyVal);
+            result += replaceKey;
+        }
+        System.out.println("Encrypted message is : " + result);
+        return result;
     }
 
 

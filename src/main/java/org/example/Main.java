@@ -100,7 +100,13 @@ public class Main {
         List<Integer> listOfNumbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
         oddEven.isEvenOddWithStreams(listOfNumbers);
 
+        //Working with Substrings
         stringCodeChallenges.workingWithSubstrings();
+
+        //Encryption String Code Challenge
+        String string = "something";
+        int shifkey = 1;
+        stringCodeChallenges.encryptionCodeChallenge(string, shifkey);
 
 
     }
