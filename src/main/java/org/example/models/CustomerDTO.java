@@ -8,6 +8,14 @@ public class CustomerDTO {
     private String productOrdered;
     private Double productPrice;
 
+
+    public CustomerDTO(String customerName, Integer id, String productOrdered, Double productPrice) {
+        this.customerName = customerName;
+        this.id = id;
+        this.productOrdered = productOrdered;
+        this.productPrice = productPrice;
+    }
+
     public String getCustomerName() {
         return customerName;
     }

@@ -2,6 +2,8 @@ package org.example;
 
 import org.example.codeClasses.*;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -14,6 +16,8 @@ public class Main {
         BubbleSortingNumbers bubbleSortingNumbers = new BubbleSortingNumbers();
         Triangle triangle = new Triangle();
         MapsDemos mapsDemos = new MapsDemos();
+        OddEven oddEven = new OddEven();
+        StringCodeChallenges stringCodeChallenges = new StringCodeChallenges();
 
 
 
@@ -81,7 +85,22 @@ public class Main {
         int triangleSizeFour = 10;
         triangle.printingReverseTriangleWithNumbers(triangleSizeFour);
 
+        //Working with Maps
         mapsDemos.workingWithMaps();
+
+        //Working with maps using Streams and list
+        mapsDemos.mapsWithStreams();
+
+        //Calcluate if odd or even
+        int primeNum = 19;
+        int notPrimeNum = 4;
+        oddEven.isEvenOdd(notPrimeNum);
+
+        //Takes only odd Intries and squeares them
+        List<Integer> listOfNumbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+        oddEven.isEvenOddWithStreams(listOfNumbers);
+
+        stringCodeChallenges.workingWithSubstrings();
 
 
     }
