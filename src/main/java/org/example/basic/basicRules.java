@@ -31,6 +31,15 @@ public class basicRules {
         System.out.println("The results of the multiple calcuations is " + miltipleCalResult);
 
 
+        //Calling the object for all loops
+        AllLoops allLoops = new AllLoops();
+
+        String name = "Street";
+        allLoops.forLoopDemo(name);
+
+        allLoops.doWhileLoop();
+
+
 
 
 
