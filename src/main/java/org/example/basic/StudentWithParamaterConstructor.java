@@ -1,8 +1,10 @@
 package org.example.basic;
 
-public class Student {
+public class StudentWithParamaterConstructor {
 
-//This is using a default constructor  which means its not required to specify/set the variables for the object
+    public StudentWithParamaterConstructor(String name) {
+        this.name = name;
+    }
 
     private String name;
     private Integer age;
