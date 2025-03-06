@@ -32,4 +32,34 @@ public class NutBoltMatch {
 
     }
 
+    public void nutsBolts(char[] nuts, char[] bolts){
+
+        Map<Character, Integer> mappy = new HashMap<>();
+        Integer counter = 0;
+
+        for(Character element : nuts){
+            mappy.put(element, counter);
+            counter++;
+        }
+
+        counter = 0;
+
+        for(Map.Entry<Character, Integer> entry : mappy.entrySet()){
+            if(mappy.containsKey(bolts[counter])){
+                nuts[counter] = bolts[counter];
+                counter++;
+            }
+        }
+
+        System.out.println("Nuts : ");
+        System.out.println (Arrays.toString(nuts) + " " );
+        System.out.println("Bolts : ");
+        System.out.println(Arrays.toString(bolts) + " " );
+
+
+    }
+
+
+
+
 }

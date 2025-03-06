@@ -21,8 +21,10 @@ public class StringCodeChallenges {
         String alphabet = "abcdefghijklmnopqrstuvwxyz";
 
         for(int i = 0; i < message.length(); i++){
+            //I alwasy forget the indexOf
             int charPosition = alphabet.indexOf(message.charAt(i));
             int keyVal = (shiftKey + charPosition) % 26;
+            // don't forget to make this char
             char replaceKey = alphabet.charAt(keyVal);
             result += replaceKey;
         }

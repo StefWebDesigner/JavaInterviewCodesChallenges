@@ -33,16 +33,7 @@ public class Merging {
         System.out.println(" Looking at the merge List Test");
         System.out.println(Arrays.toString(intMergeArray));
         return intMergeArray;
-
-
-
     }
-
-
-
-
-
-
 
 
 }

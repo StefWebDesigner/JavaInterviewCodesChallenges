@@ -7,44 +7,70 @@ public class MostReoccuringCharacter {
 
     public char recurringChar(String str) {
 
-        char[] strConvetedChar = str.toCharArray();
+        char[] convertedString = str.toCharArray();
+        Map<Character, Integer> newMap = new HashMap<>();
+        int higheestValue = 0;
+        char mostReocurringCharacger = 0;
 
-        Map<String, Integer> charCounter = new HashMap<>();
-        int counter = 1;
+        //Track all duplicates
+        for(char element : convertedString){
+            if(!newMap.containsKey(element)){
+                int counter = 1;
 
-        for ( char element : strConvetedChar ) {
-            Map<String, Integer> tracker = new HashMap<>();
-
-            String entryConverted = Character.toString(element);
-
-            if(!charCounter.containsKey(entryConverted)){
-
-                charCounter.put(entryConverted, counter);
-                tracker.put(entryConverted, counter);
-            }
-            else if(charCounter.containsKey(entryConverted)){
-                int temp = charCounter.get(entryConverted) + 1;
-                charCounter.replace(entryConverted, temp);
+                newMap.put(element, counter);
+                System.out.println("new entry for element " + element);
+            } else {
+                int tempCounter = newMap.get(element) + 1;
+                newMap.replace(element, tempCounter);
+                System.out.println("already exisitng element for element " + element + " and counter " + tempCounter);
             }
         }
 
-        int highestNum = 0;
-        char[] mostCharOccurances  = new char[1];
-        System.out.println("Map : " + charCounter);
+        for(Map.Entry<Character, Integer> entry : newMap.entrySet()){
 
-        for ( Map.Entry<String, Integer> item : charCounter.entrySet()) {
-            if(item.getValue() > highestNum){
-                highestNum = item.getValue();
-                mostCharOccurances = (item.getKey()).toCharArray();
+            System.out.println("Checking for the entry value : " + entry.getValue());
+
+            if(higheestValue < entry.getValue()){
+                mostReocurringCharacger = entry.getKey();
+                higheestValue = entry.getValue();
+                System.out.println("Most Character udpated : " + mostReocurringCharacger);
             }
         }
 
-        System.out.println( "highest number " + highestNum);
-
-        char result = mostCharOccurances[0];
-        System.out.println(" result : " + result);
-
-        return result;
+        System.out.println("mostReocurringCharacger : " + mostReocurringCharacger);
+        return mostReocurringCharacger;
     }
+
+    public Character mostCharacter(String word){
+        String wordCompiled = word.toLowerCase().replace("\\s", "");
+        char[] charArrys = wordCompiled.toCharArray();
+        Character highestChar = 0;
+        Integer vistedCharCount = 0;
+
+        Map<Character, Integer> duplicates = new HashMap<>();
+
+        for(char c : charArrys){
+            Integer counter = 1;
+            if(!duplicates.containsKey(c)){
+                duplicates.put(c, counter);
+            } else {
+                Integer added = duplicates.get(c) + 1;
+                duplicates.replace(c, added);
+            }
+        }
+
+        for(Map.Entry<Character, Integer> element : duplicates.entrySet()){
+            if(vistedCharCount < element.getValue()){
+                highestChar = element.getKey();
+                vistedCharCount = element.getValue();
+            }
+        }
+
+        System.out.println(highestChar);
+        return highestChar;
+
+    }
+
+
 
 }

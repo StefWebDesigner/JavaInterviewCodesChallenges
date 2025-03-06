@@ -6,55 +6,45 @@ import java.util.Map;
 
 public class BiggestSum {
 
-        public int bigSum(List<Integer> nums){
+    public int maxSumFromTwoPairs(List<Integer> numbers) {
+        int maxSum = 0;
+        int highestValue = 0;
+        int otherPair = 0;
+        Map<Integer, Integer> dups = new HashMap<>();
 
-            int maxNum = 0;
-            int highestValue = 0;
-            Map<Integer,Integer> dups = new HashMap<>();
-
-            for (int i = 0; i < nums.size(); i++) {
-                if(nums.get(i) > highestValue){
-                    highestValue = nums.get(i);
-                }
+        ;
+        for (Integer number : numbers) {
+            if (highestValue < number) {
+                highestValue = number;
+                System.out.println("Highest Value is udpated to " + highestValue);
             }
+        }
 
-            System.out.println("highest Value recored : " + highestValue);
-
-            int counter = 1;
-
-            for (Integer element : nums) {
-                Map<Integer, Integer> tracker = new HashMap<>();
-                if(!dups.containsKey(element)){
-                    dups.put(element, counter);
-                    tracker.put(element, counter);
-                }
-                else if(dups.containsKey(element)){
-                    int temp = dups.get(element) + 1;
-                    dups.replace(element, temp);
-                }
+        System.out.println("Highest Value is " + highestValue);
+        Integer counter = 1;
+        for (Integer element : numbers) {
+            if (!dups.containsKey(element)) {
+                dups.put(element, counter);
+            } else {
+                Integer tempCounter = dups.get(element);
+                dups.replace(element, tempCounter + 1);
             }
+        }
 
-            System.out.println(" dup list" + dups);
-
-            for (int i = 0; i < nums.size(); i++) {
-                if((dups.get(nums.get(i)) > 1)) {
-                    int pairSum = highestValue + nums.get(i);
-                    if(maxNum < pairSum){
-                        maxNum = pairSum;
-                        System.out.println("Max Updated : " + maxNum);
-                    }
-                }
-                else if(highestValue == nums.get(i)){
-                    System.out.println("Skipped and euqls ");
-                } else {
-                    int pairSum = highestValue + nums.get(i);
-                    if(maxNum < pairSum){
-                        maxNum = pairSum;
-                        System.out.println("Max Updated : " + maxNum);
-                    }
-                }
+        for (Map.Entry<Integer, Integer> entry : dups.entrySet()) {
+            Integer evalSumPair = entry.getKey() + highestValue;
+            if (entry.getKey() == highestValue) {
+                System.out.println("Throwing this variable out");
+            } else if (maxSum < evalSumPair) {
+                maxSum = evalSumPair;
+                otherPair = entry.getKey();
+            } else {
+                System.out.println(" Pair is to lower to be udpated");
             }
-            System.out.println("Max " + maxNum);
-            return maxNum;
+        }
+
+        System.out.println("Other Pair is " + highestValue + " and " + otherPair);
+        System.out.println(maxSum);
+        return maxSum;
     }
 }
