@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.codeClasses.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -107,6 +108,21 @@ public class Main {
         String string = "something";
         int shifkey = 1;
         stringCodeChallenges.encryptionCodeChallenge(string, shifkey);
+
+        BubbleSortingArrayList bubbleSortingArrayList = new BubbleSortingArrayList();
+        List<Integer> listOfIntegers = new ArrayList<>();
+        listOfIntegers.add(100);
+        listOfIntegers.add(7);
+        listOfIntegers.add(50);
+        listOfIntegers.add(2);
+        listOfIntegers.add(5);
+
+        bubbleSortingArrayList.arrayListSort(listOfIntegers);
+
+        LowestMaxListSumClass lowestMaxListSumClass = new LowestMaxListSumClass();
+        lowestMaxListSumClass.miniMaxSum2(listOfIntegers);
+
+
 
 
     }
