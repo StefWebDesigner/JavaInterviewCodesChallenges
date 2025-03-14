@@ -1,0 +1,124 @@
+ class Main {
+        public static void main(String[] args ) throws Exception {
+            StringBuilder inputData = new StringBuilder();
+            String thisLine = null;
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            while ((thisLine = br.readLine()) != null) {
+                inputData.append(thisLine + "\n");
+            }
+            // Output the solution to the console
+            System.out.println(codeHere(inputData));
+        }
+
+        public static String codeHere(StringBuilder inputData) {
+
+            // Arraylist for the inputed data to capture the data
+            List<String> accountList = new ArrayList<>();
+
+            Integer t = 2;
+            //numberOfAccounts
+            // Integer n = inputData;
+
+            //I hard coded these variables to resemeble as closely to the sample data you provided.
+            Integer n = 6;
+            Integer n2 = 5;
+
+
+            // I was unable to extract the information the file. I'll learned today to ensure I know how to do this next time. However, I know how to find the duplicates to completed the other parts of the code challenges.
+            List<String> tempAccountList = new ArrayList<>();
+            tempAccountList.add("03 10103538 2222 1233 6160 0142"); //1
+            tempAccountList.add("03 10103538 2222 1233 6160 0141"); //1
+            tempAccountList.add("30 10103538 2222 1233 6160 0141"); //2
+            tempAccountList.add("30 10103538 2222 1233 6160 0142"); //2
+            tempAccountList.add("30 10103538 2222 1233 6160 0141");
+            tempAccountList.add("30 10103538 2222 1233 6160 0142");
+
+            tempAccountList.add("30 10103538 2222 1233 6160 0144"); //1
+            tempAccountList.add("03 10103538 2222 1233 6160 0142"); //1
+            tempAccountList.add("30 10103538 2222 1233 6160 0145"); //1
+            tempAccountList.add("30 10103538 2222 1233 6160 0146");//1
+            tempAccountList.add("30 10103538 2222 1233 6160 0143");//1
+
+            //The new subarrays
+            List<String> group1 = new ArrayList<>();
+            List<String> group2 = new ArrayList<>();
+
+
+            for (int i = 0; i < n; i++) {
+                group1.add(tempAccountList.get(i));
+            }
+
+            for (int i = n2; i < tempAccountList.size(); i++) {
+                group2.add(tempAccountList.get(i));
+            }
+
+            //My attempts to acaptures the information from the prompt
+            //Going to caputre the accounts information
+            // ? There could  be some formating issue -- Will need to add further changes
+            // for (int i = 0; i < n; i++) {
+            //     String temp = new String(inputData);
+            //     if(inputData.length() > 2 ){
+            //         accountList.add(temp);
+            //         System.out.println(" temp : " + temp);
+            //     }
+            //     System.out.println("Hitting outside the loop");
+            // }
+
+            // Its a single file ** Need to extract it somehow *** Then the rest of the algorgith works
+            // for (int i = 0; i < inputData.length(); i++) {
+            //     String temp = new String(inputData);
+            //         accountList.add(temp);
+            // }
+
+            // System.out.println("The account list in array " + n + " is []" + tempAccountList);
+
+
+            //variables for duplicates for accounts
+            Map<String, Integer> dups = new HashMap<>();
+            // make an counter
+            Integer counter = 1;
+            Map<String, Integer> dups2 = new HashMap<>();
+            // make an counter
+            Integer counter2 = 1;
+
+
+            // use an enhanced forloop to track and dupliates for those group1
+            for(String element : group1){
+                if(!dups.containsKey(element)){
+                    dups.put(element, counter);
+                } else {
+                    //Adding to the existing quanity amount
+                    Integer temp = dups.get(element) +1;
+                    dups.replace(element, temp);
+                }
+            }
+
+            // use an enhanced forloop to track and dupliates for those group2
+            for (String element : group2) {
+                // For new entries accounts to the map
+                if (!dups2.containsKey(element)) {
+                    dups2.put(element, counter2);
+                } else {
+                    // Adding to the existing quanity amount
+                    Integer temp = dups2.get(element) + 1;
+                    dups.replace(element, temp);
+                }
+            }
+
+            //printing out information
+            for(Map.Entry<String, Integer> entry : dups.entrySet()){
+                System.out.println(entry.getKey() + " "  + entry.getValue());
+            }
+
+            System.out.println();
+
+            // printing out information
+            for (Map.Entry<String, Integer> entry : dups2.entrySet()) {
+                System.out.println(entry.getKey() + " " + entry.getValue());
+            }
+
+            // Use this function to write your solution;
+            return null;
+            // return inputData.toString();
+        }
+    }

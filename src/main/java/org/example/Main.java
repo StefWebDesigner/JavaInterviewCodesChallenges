@@ -1,7 +1,9 @@
 package org.example;
 
+import org.example.codeClasses.ExtractingFromFile;
 import org.example.codeClasses.*;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.Scanner;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //Setting up the scanner input
         Scanner scanner = new Scanner(System.in);
@@ -122,6 +124,41 @@ public class Main {
         LowestMaxListSumClass lowestMaxListSumClass = new LowestMaxListSumClass();
         lowestMaxListSumClass.miniMaxSum2(listOfIntegers);
 
+//        System.out.println("List off account :");
+//        List<String> listOfAccounts = new ArrayList<>();
+//        listOfAccounts.add("03 10103538 2222 1233 6160 0142"); //1
+//        listOfAccounts.add("03 10103538 2222 1233 6160 0141"); //1
+//        listOfAccounts.add("30 10103538 2222 1233 6160 0141"); //2
+//        listOfAccounts.add("30 10103538 2222 1233 6160 0142"); //2
+//        listOfAccounts.add("30 10103538 2222 1233 6160 0141");
+//        listOfAccounts.add("30 10103538 2222 1233 6160 0142");
+////        --- slipe here
+//        listOfAccounts.add("30 10103538 2222 1233 6160 0144"); //1
+//        listOfAccounts.add("03 10103538 2222 1233 6160 0142"); //1
+//        listOfAccounts.add("30 10103538 2222 1233 6160 0145"); //1
+//        listOfAccounts.add("30 10103538 2222 1233 6160 0146");//1
+//        listOfAccounts.add("30 10103538 2222 1233 6160 0143");//1
+
+//      This is importing a file in the code challenge
+
+        //*** BANK ACCOUNT CODE CHALLENGE & ACCESSING OI FILES
+        BufferedReader reader =
+                new BufferedReader(new FileReader("src/main/java/input"));
+
+        System.out.println("Reading the file using readLine() method:");
+        String contentLine = reader.readLine();
+        while (contentLine != null) {
+//            System.out.println(contentLine);
+            contentLine = reader.readLine();
+        }
+
+        ExtractingFromFile extractingFromFile = new ExtractingFromFile();
+        List<String> convertedFile =  extractingFromFile.extractFile("src/main/java/input");
+//        System.out.println(convertedFile);
+
+        BankAccount bankAccount = new BankAccount();
+
+        bankAccount.bankAccountClassChallenge(convertedFile);
 
 
 
