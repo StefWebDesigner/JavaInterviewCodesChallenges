@@ -1,6 +1,5 @@
 package org.example;
 
-import org.example.codeClasses.ExtractingFromFile;
 import org.example.codeClasses.*;
 
 import java.io.*;
@@ -142,23 +141,39 @@ public class Main {
 //      This is importing a file in the code challenge
 
         //*** BANK ACCOUNT CODE CHALLENGE & ACCESSING OI FILES
-        BufferedReader reader =
-                new BufferedReader(new FileReader("src/main/java/input"));
+//        BufferedReader reader =
+//                new BufferedReader(new FileReader("src/main/java/input"));
+//
+//        System.out.println("Reading the file using readLine() method:");
+//        String contentLine = reader.readLine();
+//        while (contentLine != null) {
+//            contentLine = reader.readLine();
+//        }
+//
+//        ExtractingFromFile extractingFromFile = new ExtractingFromFile();
+//        List<String> convertedFile =  extractingFromFile.extractFile("src/main/java/input");
 
-        System.out.println("Reading the file using readLine() method:");
-        String contentLine = reader.readLine();
-        while (contentLine != null) {
-//            System.out.println(contentLine);
-            contentLine = reader.readLine();
-        }
+//        BankAccount bankAccount = new BankAccount();
+//
+//        bankAccount.bankAccountClassChallenge(convertedFile);
 
-        ExtractingFromFile extractingFromFile = new ExtractingFromFile();
-        List<String> convertedFile =  extractingFromFile.extractFile("src/main/java/input");
-//        System.out.println(convertedFile);
+        PalidronString palidronString = new PalidronString();
 
-        BankAccount bankAccount = new BankAccount();
+        palidronString.maxiumPalidoneUsingKChanges("43435", 3);
 
-        bankAccount.bankAccountClassChallenge(convertedFile);
+        QuickSortInt quickSortInt = new QuickSortInt();
+        int a[] = {10, 7, 8, 9, 1, 5};
+        int nx = a.length;
+        int l = 0;
+        quickSortInt.sort(a, l, nx - 1);
+
+        String[] strings = {"banana", "apple", "cherry", "date", "fig"};
+        System.out.println("Unsorted array: " + Arrays.toString(strings));
+
+        QuickSortString quickSortString = new QuickSortString();
+        quickSortString.quickSort(strings, 0, strings.length - 1);
+
+        System.out.println("Sorted array: " + Arrays.toString(strings));
 
 
 
