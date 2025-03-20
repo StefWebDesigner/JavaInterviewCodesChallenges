@@ -1,7 +1,7 @@
 package org.example.codeClasses;
 
 public class QuickSortString {
-    public static void quickSort(String[] arr, int low, int high) {
+    public void quickSort(String[] arr, int low, int high) {
         if (low < high) {
             int partitionIndex = partition(arr, low, high);
 
@@ -10,7 +10,7 @@ public class QuickSortString {
         }
     }
 
-    private static int partition(String[] arr, int low, int high) {
+    public int partition(String[] arr, int low, int high) {
         String pivot = arr[high];
         int i = (low - 1);
 

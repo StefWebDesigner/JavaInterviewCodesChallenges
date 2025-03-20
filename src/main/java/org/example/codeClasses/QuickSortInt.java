@@ -6,6 +6,7 @@ public class QuickSortInt {
 
     public int partition(int[] a, int low, int high) {
 
+        //I alwasy get this wrong
         int pivot = a[high];
         int i = (low-1);
         for (int j=low; j<high; j++) {

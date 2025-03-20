@@ -17,13 +17,14 @@ public class Anagram {
         Boolean isAnagram = true;
 
         if (strOneCompiled.length() != strTwoCompiled.length()) {
+            System.out.println("False");
             isAnagram = false;
         } else {
             char[] stringOneCharArray = strOneCompiled.toLowerCase().toCharArray();
             char[] stringTwoCharArray = strTwoCompiled.toLowerCase().toCharArray();
 
             for (int i = 0; i < stringOneCharArray.length; i++) {
-                for (int j = i + 1; j < stringOneCharArray.length; j++) {
+                for (int j = 0; j < stringOneCharArray.length; j++) {
                     if (Character.toLowerCase(stringOneCharArray[j]) > Character.toLowerCase(stringOneCharArray[i])) {
                         swapCharacters(i, j, stringOneCharArray);
                     }
@@ -31,7 +32,7 @@ public class Anagram {
             }
 
             for (int i = 0; i < stringTwoCharArray.length; i++) {
-                for (int j = i + 1; j < stringTwoCharArray.length; j++) {
+                for (int j = 0; j < stringTwoCharArray.length; j++) {
                     if (Character.toLowerCase(stringTwoCharArray[j]) > Character.toLowerCase(stringTwoCharArray[i])) {
                         swapCharacters(i, j, stringTwoCharArray);
                     }
@@ -57,7 +58,7 @@ public class Anagram {
         }
 
         System.out.println("This is testing if the string is an anagram");
-        System.out.println("Result is true");
+        System.out.println(isAnagram);
         return isAnagram;
     }
 }

@@ -23,8 +23,5 @@ public class InsertSort {
 
         return index;
 
-
-
-
     }
 }

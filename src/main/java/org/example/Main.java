@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.codeClasses.*;
+import org.example.practiceDemos.OutputReviewChallenges;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -175,6 +176,13 @@ public class Main {
 
         System.out.println("Sorted array: " + Arrays.toString(strings));
 
+
+//        List<Integer> listOfNumbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+        OutputReviewChallenges outputReviewChallenges = new OutputReviewChallenges();
+
+
+        Anagram anagram = new Anagram();
+        anagram.isAnagram("work", "work");
 
 
     }

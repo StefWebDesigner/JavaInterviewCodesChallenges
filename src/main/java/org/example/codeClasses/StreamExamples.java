@@ -15,7 +15,7 @@ public class StreamExamples {
         List<Orders> filteredOrders = new ArrayList<>();
 
         filteredOrders = allOrders.stream().filter(order -> order.getTotalPrice() > 50.00)
-                .sorted(comparing(Orders::getTotalPrice))
+                .sorted(Comparator.comparing(Orders::getTotalPrice))
                 .collect(Collectors.toList());
 
 

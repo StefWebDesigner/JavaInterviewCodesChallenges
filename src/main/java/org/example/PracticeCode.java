@@ -7,29 +7,32 @@ import java.util.stream.Collectors;
 
 public class PracticeCode {
 
-    public void swapping(int i, int j, char[]arr){
-        char temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
-    public  char[] sortingAlg(String word){
-
-        int wordSize = word.length();
-        char[] wordCharArray = word.toCharArray();
-
-        for(int i = 0; i < wordCharArray.length; i++){
-            for(int j = 0; j < wordCharArray.length; j++){
-                if((Character.toLowerCase(wordCharArray[j])> (Character.toLowerCase(wordCharArray[i])))){
-                    swapping(i, j, wordCharArray);
-                }
+    public int partition (String[] a, int low, int high){
+        String pivot = a[high];
+        int i = low -1;
+        for(int j = low; j < high; j++){
+            if(a[j].compareTo(pivot) < 0){
+                i++;
+                String temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
             }
         }
 
-        System.out.println("Word : " + word);
-        System.out.println(Arrays.toString(wordCharArray));
-        return wordCharArray;
+        String temp = a[i + 1];
+        a[i + 1] = a[high];
+        a[high] = temp;
 
+        return i + 1;
+    }
+
+    public String[] quickSort(String[] a, int low, int high){
+        if(low < high){
+            int pi = partition(a, low, high);
+            quickSort(a, low, pi - 1);
+            quickSort(a, pi+1, high);
+        }
+        return a;
     }
 
 
@@ -39,24 +42,5 @@ public class PracticeCode {
 
 
 
-    public static void main(String[] args) {
 
-//        CustomerDTO c1 = new CustomerDTO("Stefan", 1, "iPhone", 1000.00);
-//        CustomerDTO c2 = new CustomerDTO("Puja", 2, "Samsung", 500.00);
-//        CustomerDTO c3 = new CustomerDTO("Ona", 3, "Cricket", 100.00);
-//
-//        List<CustomerDTO> listOfClients = new ArrayList<>();
-//        listOfClients.add(c1);
-//        listOfClients.add(c2);
-//        listOfClients.add(c3);
-
-
-
-        PracticeCode practiceCode = new PracticeCode();
-        String word = "hinnah";
-        practiceCode.sortingAlg(word);
-
-    }
-
-
-    }
+}
