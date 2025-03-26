@@ -12,7 +12,6 @@ public class BiggestSum {
         int otherPair = 0;
         Map<Integer, Integer> dups = new HashMap<>();
 
-        ;
         for (Integer number : numbers) {
             if (highestValue < number) {
                 highestValue = number;

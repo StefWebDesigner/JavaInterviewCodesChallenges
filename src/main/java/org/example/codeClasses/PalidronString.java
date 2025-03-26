@@ -3,26 +3,27 @@ package org.example.codeClasses;
 public class PalidronString {
 
     public String isPalidronString(String input){
+        String compiled = input.toLowerCase().replaceAll(":\\s", "");
         String reversString = "";
-        int inputLength = input.length();
+        int inputLength = compiled.length();
         Boolean isBoolean = false;
 
         for(int i = inputLength -1; i >= 0; i--){
-            reversString = reversString + input.charAt(i);
+            reversString = reversString + compiled.charAt(i);
         }
 
-        if(input.equals(reversString)){
+        if(compiled.equals(reversString)){
             isBoolean = true;
         }
 
         if(isBoolean){
             System.out.println(" *** This is a Palidrone Test : **** ");
             System.out.println("String is a palidone");
-            return input + " is a Palidone";
+            return compiled + " is a Palidone";
         } else {
             System.out.println(" *** This is a Palidrone Test : **** ");
             System.out.println("String isn't a palidone");
-            return input + " isn't a Palidone";
+            return compiled + " isn't a Palidone";
         }
     }
 

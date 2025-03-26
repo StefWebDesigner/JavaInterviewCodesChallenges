@@ -184,6 +184,9 @@ public class Main {
         Anagram anagram = new Anagram();
         anagram.isAnagram("work", "work");
 
+        Fabiacui fabiacui1 = new Fabiacui();
+        fabiacui1.fabiacuici(4, 0, 1);
+
 
     }
 

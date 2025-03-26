@@ -12,8 +12,8 @@ public class Anagram {
 
     //Anagram calculator Code Challenge
     public Boolean isAnagram(String stringOne, String stringTwo) {
-        String strOneCompiled = stringOne.replaceAll("\\s", "");
-        String strTwoCompiled = stringTwo.replaceAll("\\s", "");
+        String strOneCompiled = stringOne.replaceAll(":\\s", "");
+        String strTwoCompiled = stringTwo.replaceAll(":\\s", "");
         Boolean isAnagram = true;
 
         if (strOneCompiled.length() != strTwoCompiled.length()) {
