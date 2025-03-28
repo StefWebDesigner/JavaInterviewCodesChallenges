@@ -190,6 +190,10 @@ public class Main {
         IsomorphicStrings isomorphicStrings = new IsomorphicStrings();
         isomorphicStrings.isIsomorphic("worr", "work");
 
+        PalidroneNumbers palidroneNumbers = new PalidroneNumbers();
+        int[] arr77 = {1,2,3,2,1};
+        palidroneNumbers.isPalidroneNumber(arr77);
+
 
     }
 
