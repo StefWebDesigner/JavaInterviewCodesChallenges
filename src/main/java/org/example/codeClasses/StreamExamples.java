@@ -113,11 +113,11 @@ public class StreamExamples {
         );
 
         // Define the expected map
-        Map<String, String> expectedMap = Map.of(
-                "one", "one",
-                "two", "two, two",
-                "three", "three"
-        );
+//        Map<String, String> expectedMap = Map.of(
+//                "one", "one",
+//                "two", "two, two",
+//                "three", "three"
+//        );
     }
 
     public void givenStringStream_whenConvertingToMapWithStreamReduce_thenExpectedMapIsGenerated() {

@@ -17,18 +17,23 @@ public class IsomorphicStrings {
         Map<Character, Integer> mapB = new HashMap<>();
 
         for (int i = 0; i < a.length(); ++i) {
-            if (!mapA.containsKey(a.charAt(i))) {
-                mapA.put(a.charAt(i), i);
+            char element1 = a.charAt(i);
+            char element2 = b.charAt(i);
+
+            if (!mapA.containsKey(element1)) {
+                mapA.put(element1, i);
             }
 
-            if (!mapB.containsKey(b.charAt(i))) {
-                mapB.put(b.charAt(i), i);
+            if (!mapB.containsKey(element2)) {
+                mapB.put(element2, i);
             }
 
-            if (!mapA.get(a.charAt(i)).equals(mapB.get(b.charAt(i)))) {
+            if (!mapA.get(element1).equals(mapB.get(element2))) {
+                System.out.println("false");
                 return false;
             }
         }
+        System.out.println("Iso - true");
         return true;
 
 

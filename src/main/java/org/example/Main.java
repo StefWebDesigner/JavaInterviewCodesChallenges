@@ -187,6 +187,9 @@ public class Main {
         Fabiacui fabiacui1 = new Fabiacui();
         fabiacui1.fabiacuici(4, 0, 1);
 
+        IsomorphicStrings isomorphicStrings = new IsomorphicStrings();
+        isomorphicStrings.isIsomorphic("worr", "work");
+
 
     }
 
