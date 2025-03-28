@@ -7,31 +7,41 @@ import java.util.stream.Collectors;
 
 public class OutputReviewChallenges {
 
-    public Boolean isIsomorphic(String word, String word1){
-        if(word.length() != word1.length()){
+
+    public Boolean isoString(String a, String b){
+        char[] charA = a.toLowerCase().replaceAll(":\\s","").toCharArray();
+        char[] charB = b.toLowerCase().replaceAll(":\\s","").toCharArray();
+
+        if(charA.length != charB.length){
             return false;
         } else {
-            Map<Character, Integer> wordCha = new HashMap<>();
-            Map<Character, Integer> word1Char = new HashMap<>();
-            for(int i = 0; i < word.length(); ++i){
-                if(!wordCha.containsKey(word.charAt(i))){
-                    char element = word.charAt(i);
-                    wordCha.put(element, i);
+            Map<Character, Integer> map1 = new HashMap<>();
+            Map<Character, Integer> map2 = new HashMap<>();
+
+            //Remember ++i & i for the value
+            for(int i = 0; i < charA.length; ++i){
+                char element1 = charA[i];
+                char element2 = charB[i];
+
+                if(!map1.containsKey(element1)){
+                    map1.put(element1, i);
                 }
 
-                if(word1Char.containsKey(word1.charAt(i))){
-                    char element = word1.charAt(i);
-                    word1Char.put(element, i);
+                if(!map2.containsKey(element2)){
+                    map2.put(element2, i);
                 }
 
-                if (!wordCha.get(word.charAt(i)).equals(word1Char.get(word1.charAt(i)))) {
+                if(map1.get(element1) !=(map2.get(element2))){
+                    System.out.println("false((((((");
                     return false;
+
                 }
             }
-
+            System.out.println("true((((((");
             return true;
-
         }
+
+
     }
 
 
