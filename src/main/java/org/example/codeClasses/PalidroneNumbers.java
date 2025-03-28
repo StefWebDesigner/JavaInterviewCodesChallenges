@@ -9,6 +9,7 @@ public class PalidroneNumbers {
         Boolean isPaldirone = false;
         int[] reverseArr = new int[arr.length];
 
+        //Ensure you have the postion for the reverseArr
         Integer position = 0;
         for(int i = arr.length - 1; i >= 0; i--)   {
             reverseArr[position] = arr[i];
