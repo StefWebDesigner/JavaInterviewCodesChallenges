@@ -194,13 +194,17 @@ public class Main {
         int[] arr77 = {1,2,3,2,1};
         palidroneNumbers.isPalidroneNumber(arr77);
 
-        outputReviewChallenges.isoString("worr", "wokk");
+//        outputReviewChallenges.isoString("worr", "wokk");
 
         UsingSets usingSets = new UsingSets();
         usingSets.creatingSets();
 
+        outputReviewChallenges.findTheHigestValuesMaps();
+
 
     }
+
+
 
 
 

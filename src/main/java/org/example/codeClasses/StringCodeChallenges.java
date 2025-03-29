@@ -1,5 +1,8 @@
 package org.example.codeClasses;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class StringCodeChallenges {
 
 
@@ -13,6 +16,14 @@ public class StringCodeChallenges {
 
         String substtingUpperExpression = stringOne.substring(6, 18);
         System.out.println("Substring with the second half of the expression " + substtingUpperExpression);
+    }
+
+    public List<String> convertStringToArray(){
+        String word = "java monkey Python";
+        List<String> masterList = Arrays.asList(word.split(" "));
+        System.out.println(masterList);
+        return masterList;
+
     }
 
     public String encryptionCodeChallenge(String message, int shiftKey){
@@ -31,6 +42,8 @@ public class StringCodeChallenges {
         System.out.println("Encrypted message is : " + result);
         return result;
     }
+
+
 
 
 

@@ -1,5 +1,6 @@
 package org.example.codeClasses;
 
+import org.example.models.Employee;
 import org.example.models.Orders;
 
 import java.util.*;
@@ -92,6 +93,91 @@ public class StreamExamples {
                 .orElse("Not found");
     }
 
+    public Integer findHighestNumber(){
+        List<Integer> masterList = Arrays.asList(100, 1000, 400000, 1900);
+        Integer result = masterList.stream().filter(nums -> nums==1000)
+                .findFirst()
+                .orElse(null);
+        System.out.println(result);
+        return result;
+    }
+
+    public Employee findHighestPaidEmployee(){
+        List<Employee> employees = new ArrayList<>();
+        Employee one = new Employee("Alice", 50000);
+        Employee two = new Employee("Bob", 75000);
+        Employee three = new Employee("Charlie", 60000);
+
+        employees.add(one);
+        employees.add(two);
+        employees.add(three);
+
+        Optional<Employee> max = employees.stream().max(Comparator.comparing(Employee::getSalary));
+
+        System.out.println(max.get().getName());
+        return max.get();
+
+    }
+
+    public Employee findHighestPaidEmployeeSortedingWay(){
+        List<Employee> employees = new ArrayList<>();
+        Employee one = new Employee("Alice", 50000);
+        Employee two = new Employee("Bob", 75000);
+        Employee three = new Employee("Charlie", 60000);
+
+        employees.add(one);
+        employees.add(two);
+        employees.add(three);
+
+        Optional<Employee> employee = employees.stream()
+                .sorted(Comparator.comparingDouble(Employee::getSalary).reversed())
+                .findFirst();
+
+        System.out.println(employee.get().getName());
+        return employee.orElse(null);
+
+    }
+
+    public Integer findHighestValueMap(){
+        Map<String, Integer> map = new HashMap<>();
+        map.put("John", 1);
+        map.put("Jane", 3);
+        map.put("Jack", 1);
+
+//        Optional<Map.Entry<String, Integer>> maxEntry = map.entrySet().stream()
+//                .max(Map.Entry.comparingByValue());
+
+        Optional<Integer> maxValue = map.entrySet().stream()
+                .map(Map.Entry::getValue).max(Integer::compare);
+
+//        System.out.println(maxEntry.get());
+        System.out.println(maxValue);
+
+        return maxValue.get();
+    }
+
+
+    public Map.Entry<String, Integer> findHighestEntryValueSetMap(){
+        Map<String, Integer> map = new HashMap<>();
+        map.put("John", 1);
+        map.put("Jane", 3);
+        map.put("Jack", 1);
+
+        Optional<Map.Entry<String, Integer>> maxEntry = map.entrySet().stream()
+                .max(Map.Entry.comparingByValue());
+
+
+        return maxEntry.get();
+    }
+
+    //________ Extra STuff to try
+
+    // --- Learn how to use collect(Collect -> mapTo
+
+
+
+
+
     public void streamToMap(){
         String data = "apple=1,banana=2,orange=3,apple=4";
         Stream<String> stringStream = Arrays.stream(data.split(","));
@@ -105,20 +191,7 @@ public class StreamExamples {
         System.out.println(map);
     }
 
-    public void givenStringStream_whenConvertingToMapWithMerge_thenExpectedMapIsGenerated() {
-        Stream<String> stringStream = Stream.of("one", "two", "three", "two");
 
-        Map<String, String> mergedMap = stringStream.collect(
-                Collectors.toMap(s -> s, s -> s, (s1, s2) -> s1 + ", " + s2)
-        );
-
-        // Define the expected map
-//        Map<String, String> expectedMap = Map.of(
-//                "one", "one",
-//                "two", "two, two",
-//                "three", "three"
-//        );
-    }
 
     public void givenStringStream_whenConvertingToMapWithStreamReduce_thenExpectedMapIsGenerated() {
         Stream<String> stringStream = Stream.of("one", "two", "three", "two");
@@ -151,6 +224,67 @@ public class StreamExamples {
         }
 
 
+//Apply this to my code****
+//    paratemrs of a lambda
+//	* Lambda --- (String s) -> s.toUpperCase()
+//
+//            * String::toUpperCase
+//
+//
+//
+//    	* () -> books.size() --- lambda
+//	* books::size
+//
+
+//    List<Order> orders = …
+//            Collections.sort(orders,
+//    comparing(Order::getAmount).
+//
+//            orders.stream()
+//            .filter(o -> o.getSide() == BUY)
+//            .sorted(comparing(Order::getAmount))
+//            .forEach(System.out::println);
+
+//    What are some examples of these operations?
+//            * Summming  - to group by order by currency and sum up
+//    List<Order> orders = …
+//    Map<Currency, Double> orderTotalByCurrency =
+//            orders
+//                    .stream()
+//                    .collect(groupingBy(Order::getCurrency,				                     summingDouble(Order::getAmount) ));
+//
+//System.out.println("\nOrder total per currency ");
+//orderTotalByCurrency.forEach((c, a)->
+//            System.out.printf("%s: total order value %.2f%n", c, a));
+//
+//* Averaging – uses averagingDouble()
+//    List<Order> orders = …
+//    Double averageOrderAmount =
+//            orders
+//                    .stream()
+//                    .collect(averagingDouble(o-> o.getAmount()));
+//
+//System.out.printf("%nAverage amount of each order is %.2f %n", 				                    averageOrderAmount);
+//*Summarazing – uses summarizingDouble ()  and rutnr statics of double values functions
+//    List<Order> orders = …
+//    DoubleSummaryStatistics amountSummary =
+//            orders
+//                    .stream()
+//                    .collect(summarizingDouble(o-> o.getAmount()));
+//
+//System.out.printf("Order Amount Summary %s %n", amountSummary);
+//    Order Amount Summary DoubleSummaryStatistics{count=10, sum=35800000.000000, min=1000000.000000, average=3580000.000000, max=9800000.000000}
+//
+//* Maximum with maxBy()  & returns an optional
+//
+//    What are flatmap operations?
+//            * considering using streams processing to determine the number of unique words in a file
+//* Files.lines(Paths.get("test.txt"))
+//        .map(line -> line.split("\\s+"))
+//            .flatMap(Arrays::stream)
+//	.di	.forEach(System.out::println);
+//    stinct()
 
 
-    }
+
+}
