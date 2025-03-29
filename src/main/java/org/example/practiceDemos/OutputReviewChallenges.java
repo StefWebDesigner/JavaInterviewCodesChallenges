@@ -6,29 +6,26 @@ import org.example.models.Orders;
 import java.util.*;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class OutputReviewChallenges {
 
+    public Map<Character, Integer> stringToMap(){
+        String word = "mmmooobbkkeeeyy";
+        Stream<Character> characterStream = word.chars().mapToObj(c -> (char) c);
+            Map<Character, Integer> map = characterStream
+                .collect(Collectors.toMap(
+                        //Key mapper
+                        parts -> parts,
+                        //Value Mapper
+                        parts -> 1,
+                        //Merging function to handle duplcate
+                        (existingValue, newValue) -> existingValue + 1
+                        ));
 
-    public Integer findHighestValueMap(){
-        Map<String, Integer> map = new HashMap<>();
-        map.put("John", 1);
-        map.put("Jane", 3);
-        map.put("Jack", 1);
-
-        String s = String::toLowerCase;
-
-//        Optional<Map.Entry<String, Integer>> maxEntry = map.entrySet().stream()
-//                .max(Map.Entry.comparingByValue());
-
-        Optional<Integer> maxValue = map.entrySet().stream()
-                .map(Map.Entry::getValue).max(Integer::compare);
-
-//        System.out.println(maxEntry.get());
-        System.out.println(maxValue);
-
-        return maxValue.get();
-    }
+            System.out.println(map);
+            return map;
+}
 
 
 

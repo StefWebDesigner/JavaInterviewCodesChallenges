@@ -199,7 +199,7 @@ public class Main {
         UsingSets usingSets = new UsingSets();
         usingSets.creatingSets();
 
-        outputReviewChallenges.findTheHigestValuesMaps();
+        outputReviewChallenges.stringToMap();
 
 
     }

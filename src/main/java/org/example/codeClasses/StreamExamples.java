@@ -170,26 +170,49 @@ public class StreamExamples {
         return maxEntry.get();
     }
 
+    public Map<String, Integer> splitingWordsToMap(){
+        String word = "monkey=1,dflufy=2,joyboy=3,joyboy=3";
+        Stream<String> stringStream = Arrays.stream(word.split(","));
+        Map<String, Integer> map = stringStream.map(s -> s.split("="))
+                .collect(Collectors.toMap(
+                        //Key mapper
+                        parts -> parts[0],
+                        //Value Mapper
+                        parts -> Integer.parseInt(parts[1]),
+                        //Merging function to handle duplcate
+                        (existingValue, newValue) -> existingValue + newValue
+                ));
+        System.out.println(map.toString());
+        return map;
+    }
+
+    //***** PRACTICE THIS *****
+    public Map<Character, Integer> stringToMap(){
+        String word = "mmmooobbkkeeeyy";
+        Stream<Character> characterStream = word.chars().mapToObj(c -> (char) c);
+        Map<Character, Integer> map = characterStream
+                .collect(Collectors.toMap(
+                        //Key mapper
+                        parts -> parts,
+                        //Value Mapper
+                        parts -> 1,
+                        //Merging function to handle duplcate
+                        (existingValue, newValue) -> existingValue + 1
+                ));
+
+        System.out.println(map);
+        return map;
+    }
+
     //________ Extra STuff to try
 
     // --- Learn how to use collect(Collect -> mapTo
+    // reduce
+    //flatmap
 
 
 
 
-
-    public void streamToMap(){
-        String data = "apple=1,banana=2,orange=3,apple=4";
-        Stream<String> stringStream = Arrays.stream(data.split(","));
-
-        Map<String, Integer> map = stringStream.map(s -> s.split("="))
-                .collect(Collectors.toMap(
-                        parts -> parts[0], // Key mapper
-                        parts -> Integer.parseInt(parts[1]), // Value mapper
-                        (existingValue, newValue) -> newValue // Merge function to handle duplicate keys
-                ));
-        System.out.println(map);
-    }
 
 
 
