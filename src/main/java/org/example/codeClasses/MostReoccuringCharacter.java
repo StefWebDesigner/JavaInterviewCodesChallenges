@@ -2,6 +2,8 @@ package org.example.codeClasses;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MostReoccuringCharacter {
 
@@ -71,6 +73,48 @@ public class MostReoccuringCharacter {
 
     }
 
+    public Character mostRepeatingCharacterStreams(){
+        String words = "monkeydddLuffy";
+        char mostUsedCharacter = 0;
+
+        Stream<Character> wordstoCharStream = words.chars().mapToObj(c -> (char) c);
+        Map<Character, Integer> dups = wordstoCharStream.collect(
+                Collectors.toMap(
+                        //keymapper
+                        part -> part,
+                        part -> 1,
+                        (existingValue, newValue) -> existingValue + 1
+                ));
+
+        for (Map.Entry<Character, Integer> entry : dups.entrySet()) {
+            if(entry.getValue() > mostUsedCharacter){
+                mostUsedCharacter = entry.getKey();
+            }
+        }
+
+        System.out.println(mostUsedCharacter);
+        return mostUsedCharacter;
 
 
-}
+//    Optional<Map.Entry<Character, Integer>> maxEntry = dups.entrySet().stream()
+//            .max(Map.Entry.comparingByValue());
+
+
+
+
+
+//    mostUsedCharacter = words.chars().filter(Character::isAlphabetic).mapToObj(c -> (char) c).max(Comparator.naturalOrder()).get();
+
+//    mostUsedCharacter = words.chars().filter(Character::isAlphabetic).mapToObj(c -> (char) c).max(Comparator.comparing(Map.Entry::getKey)).get();
+
+
+
+
+
+
+
+
+
+
+
+    }
