@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class IsIsomorphic {
+    //Where the position of the words have to be the same
     public Boolean isIsomorphic(String a, String b) {
         if (a.length() != b.length()) {
             return false;
