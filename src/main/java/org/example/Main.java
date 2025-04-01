@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.classbox.MajorityElement;
 import org.example.classbox.RemoveDuplicates;
 import org.example.classbox.RemoveElement;
 import org.example.codeClasses.*;
@@ -193,7 +194,7 @@ public class Main {
         isomorphicStrings.isIsomorphic("worr", "work");
 
         PalidroneNumbers palidroneNumbers = new PalidroneNumbers();
-        int[] arr77 = {1,1,2};
+        int[] arr77 = {1,1,2,3,1,1};
         palidroneNumbers.isPalidroneNumber(arr77);
 
 //        outputReviewChallenges.isoString("worr", "wokk");
@@ -210,6 +211,9 @@ public class Main {
 
         RemoveDuplicates removeDuplicates = new RemoveDuplicates();
         removeDuplicates.removeDuplicates(arr77);
+
+        MajorityElement majorityElement = new MajorityElement();
+        majorityElement.majorityElement(arr77);
 
     }
 

@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import static java.util.Comparator.comparing;
 
-public class StreamExamples {
+public class StreamExampleStuff {
 
     public List<Orders> basicStreamByFiltering(List<Orders> allOrders){
         //Return orders total balances above 50$
@@ -201,18 +201,35 @@ public class StreamExamples {
         return map;
     }
 
+    public int findingHighestValue(int[] nums) {
+        int mostCommonNumber = Arrays.stream(nums).max().getAsInt();
+        System.out.println(mostCommonNumber);
+        return mostCommonNumber;
+    }
+
+    public int majorityElement(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for(int num : nums) {
+            if(!map.containsKey(num)){
+                map.put(num, 1);
+            } else {
+                map.put(num, map.get(num) + 1);
+            }
+        }
+
+        int maxElement = map.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+        System.out.println(maxElement);
+        return maxElement;
+
+    }
+
+
     //________ Extra STuff to try
 
     // --- Learn how to use collect(Collect -> mapTo
     // reduce
     //flatmap
     //averagingDoubling
-
-
-
-
-
-
 
     public void givenStringStream_whenConvertingToMapWithStreamReduce_thenExpectedMapIsGenerated() {
         Stream<String> stringStream = Stream.of("one", "two", "three", "two");
