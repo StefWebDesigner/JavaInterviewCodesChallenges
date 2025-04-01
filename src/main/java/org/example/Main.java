@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.classbox.RemoveDuplicates;
+import org.example.classbox.RemoveElement;
 import org.example.codeClasses.*;
 import org.example.practiceDemos.OutputReviewChallenges;
 
@@ -191,7 +193,7 @@ public class Main {
         isomorphicStrings.isIsomorphic("worr", "work");
 
         PalidroneNumbers palidroneNumbers = new PalidroneNumbers();
-        int[] arr77 = {1,2,3,2,1};
+        int[] arr77 = {1,1,2};
         palidroneNumbers.isPalidroneNumber(arr77);
 
 //        outputReviewChallenges.isoString("worr", "wokk");
@@ -200,7 +202,14 @@ public class Main {
         usingSets.creatingSets();
 
         outputReviewChallenges.mostRepeatingCharacterStreams();
+        PracticeCode practiceCode = new PracticeCode();
+//        practiceCode.removeElement(arr77, 3);
 
+        RemoveElement element = new RemoveElement();
+        element.removeElement(arr77, 2);
+
+        RemoveDuplicates removeDuplicates = new RemoveDuplicates();
+        removeDuplicates.removeDuplicates(arr77);
 
     }
 

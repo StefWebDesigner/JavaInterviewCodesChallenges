@@ -55,6 +55,19 @@ public class MapsDemos {
         List<Integer> listOfCustomerIdWithOver500$Purchases = idPriceMap.entrySet().stream().filter(c -> c.getValue() >= 500.00).map(result -> result.getKey()).collect(Collectors.toList());
         System.out.println("This is the list of Customers id who have purchased an products over 500$ : " + listOfCustomerIdWithOver500$Purchases);
 
+
+
+// Play around twiht this
+        //         newMap.forEach((key, value) -> {
+        //            if (newMap.containsKey(val)) {
+        //                newMap.remove(key);
+        //            }
+        //        });
+        //
+        //        int count = newMap.size();
+        //        List<Integer> newArray = new ArrayList<>();
+        //        newMap.forEach((key, value) -> newArray.add(key));
+
     }
 
 

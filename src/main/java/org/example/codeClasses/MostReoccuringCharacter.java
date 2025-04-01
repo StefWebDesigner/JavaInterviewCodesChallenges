@@ -15,8 +15,8 @@ public class MostReoccuringCharacter {
         char mostReocurringCharacger = 0;
 
         //Track all duplicates
-        for(char element : convertedString){
-            if(!newMap.containsKey(element)){
+        for (char element : convertedString) {
+            if (!newMap.containsKey(element)) {
                 int counter = 1;
 
                 newMap.put(element, counter);
@@ -28,11 +28,11 @@ public class MostReoccuringCharacter {
             }
         }
 
-        for(Map.Entry<Character, Integer> entry : newMap.entrySet()){
+        for (Map.Entry<Character, Integer> entry : newMap.entrySet()) {
 
             System.out.println("Checking for the entry value : " + entry.getValue());
 
-            if(higheestValue < entry.getValue()){
+            if (higheestValue < entry.getValue()) {
                 mostReocurringCharacger = entry.getKey();
                 higheestValue = entry.getValue();
                 System.out.println("Most Character udpated : " + mostReocurringCharacger);
@@ -43,7 +43,7 @@ public class MostReoccuringCharacter {
         return mostReocurringCharacger;
     }
 
-    public Character mostCharacter(String word){
+    public Character mostCharacter(String word) {
         String wordCompiled = word.toLowerCase().replace("\\s", "");
         char[] charArrys = wordCompiled.toCharArray();
         Character highestChar = 0;
@@ -51,9 +51,9 @@ public class MostReoccuringCharacter {
 
         Map<Character, Integer> duplicates = new HashMap<>();
 
-        for(char c : charArrys){
+        for (char c : charArrys) {
             Integer counter = 1;
-            if(!duplicates.containsKey(c)){
+            if (!duplicates.containsKey(c)) {
                 duplicates.put(c, counter);
             } else {
                 Integer added = duplicates.get(c) + 1;
@@ -61,8 +61,8 @@ public class MostReoccuringCharacter {
             }
         }
 
-        for(Map.Entry<Character, Integer> element : duplicates.entrySet()){
-            if(vistedCharCount < element.getValue()){
+        for (Map.Entry<Character, Integer> element : duplicates.entrySet()) {
+            if (vistedCharCount < element.getValue()) {
                 highestChar = element.getKey();
                 vistedCharCount = element.getValue();
             }
@@ -73,7 +73,7 @@ public class MostReoccuringCharacter {
 
     }
 
-    public Character mostRepeatingCharacterStreams(){
+    public Character mostRepeatingCharacterStreams() {
         String words = "monkeydddLuffy";
         char mostUsedCharacter = 0;
 
@@ -87,7 +87,7 @@ public class MostReoccuringCharacter {
                 ));
 
         for (Map.Entry<Character, Integer> entry : dups.entrySet()) {
-            if(entry.getValue() > mostUsedCharacter){
+            if (entry.getValue() > mostUsedCharacter) {
                 mostUsedCharacter = entry.getKey();
             }
         }
@@ -100,21 +100,10 @@ public class MostReoccuringCharacter {
 //            .max(Map.Entry.comparingByValue());
 
 
-
-
-
 //    mostUsedCharacter = words.chars().filter(Character::isAlphabetic).mapToObj(c -> (char) c).max(Comparator.naturalOrder()).get();
 
 //    mostUsedCharacter = words.chars().filter(Character::isAlphabetic).mapToObj(c -> (char) c).max(Comparator.comparing(Map.Entry::getKey)).get();
 
 
-
-
-
-
-
-
-
-
-
     }
+}
