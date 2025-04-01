@@ -224,11 +224,18 @@ public class Main {
         ValidPalidrone validPalidrone = new ValidPalidrone();
 //        validPalidrone.isPalindrome();
         IsSubsequence isSubsequence = new IsSubsequence();
-        isSubsequence.isSubsequenceReal();
+//        isSubsequence.isSubsequenceReal();
 
         IsAnagram isAnagram = new IsAnagram();
         isAnagram.isAnagram("flower", "flower");
 
+//        int[] nums = {2,7,11,15};
+        int[] nums = {3,2,4};
+
+
+        int target = 6;
+        TwoSums twoSums = new TwoSums();
+        twoSums.twoSum(nums, target);
 
     }
 
