@@ -2,22 +2,22 @@ package org.example.classbox;
 
 public class ValidPalidrone {
 
-    public boolean isPalindrome(String s) {
-        int l = 0;
-        int r = s.length() - 1;
+    public boolean isPalindrome(String word) {
+        int low = 0;
+        int high = s.length() - 1;
 
-        while (l < r) {
-            while (l < r && !Character.isLetterOrDigit(s.charAt(l))){
-                ++l;
+        while (low < high) {
+            while (low < high && !Character.isLetterOrDigit(word.charAt(low))){
+                ++low;
             }
-            while (l < r && !Character.isLetterOrDigit(s.charAt(r))){
-                --r;
+            while (low < high && !Character.isLetterOrDigit(word.charAt(high))){
+                --high;
             }
-            if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(r))){
+            if (Character.toLowerCase(word.charAt(low)) != Character.toLowerCase(word.charAt(high))){
                 return false;
             }
-            ++l;
-            --r;
+            ++low;
+            --high;
         }
 
         return true;
