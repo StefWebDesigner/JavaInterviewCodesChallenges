@@ -225,6 +225,11 @@ public class Main {
 //        validPalidrone.isPalindrome();
         IsSubsequence isSubsequence = new IsSubsequence();
         isSubsequence.isSubsequenceReal();
+
+        IsAnagram isAnagram = new IsAnagram();
+        isAnagram.isAnagram("flower", "flower");
+
+
     }
 
 

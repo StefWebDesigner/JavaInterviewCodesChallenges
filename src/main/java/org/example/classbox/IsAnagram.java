@@ -1,8 +1,12 @@
-package org.example.codeClasses;
+package org.example.classbox;
 
+import java.time.temporal.ChronoField;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.IntStream;
 
-public class Anagram {
+public class IsAnagram {
 
     public Boolean isAnagramCollections(String stringOne, String stringTwo) {
         char[] strOneCompiled = stringOne.replaceAll(":\\s", "").toCharArray();
@@ -32,8 +36,6 @@ public class Anagram {
         }
         return isAnagram;
     }
-
-
 
     public void swapCharacters(int i, int j, char[] charArray) {
         char temp = charArray[i];
@@ -83,4 +85,13 @@ public class Anagram {
         }
         return isAnagram;
     }
+
+
+
+
+
+
 }
+
+
+

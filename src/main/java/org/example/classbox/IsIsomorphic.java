@@ -1,13 +1,9 @@
-package org.example.codeClasses;
+package org.example.classbox;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class IsomorphicStrings {
-
+public class IsIsomorphic {
     public Boolean isIsomorphic(String a, String b) {
         if (a.length() != b.length()){
             return false;
@@ -36,5 +32,4 @@ public class IsomorphicStrings {
         System.out.println("Iso - true");
         return true;
     }
-
 }
