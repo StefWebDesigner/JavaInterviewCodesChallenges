@@ -6,11 +6,14 @@ import java.util.List;
 
 public class LengthOfLastWord {
     public int lengthOfLastWord(String s) {
+        //Get the length of the string and have that be the end index
         int endIndex = s.length() - 1;
+        //Checking for spaces backwards & find the end index
         while (endIndex >= 0 && s.charAt(endIndex) == ' ') {
             endIndex--;
         }
         int startIndex = endIndex;
+        //This will find the first index
         while (startIndex >= 0 && s.charAt(startIndex) != ' ') {
             startIndex--;
         }
