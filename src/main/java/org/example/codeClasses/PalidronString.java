@@ -2,28 +2,26 @@ package org.example.codeClasses;
 
 public class PalidronString {
 
-    public String isPalidronString(String input){
-        String compiled = input.toLowerCase().replaceAll(":\\s", "");
+    public boolean isPalindrome() {
+        String s = "A man, a plan, a canal: Panama";
+        String compiled = s.toLowerCase().replaceAll("[\\s,: ]", "");
         String reversString = "";
         int inputLength = compiled.length();
         Boolean isBoolean = false;
 
         for(int i = inputLength -1; i >= 0; i--){
-            reversString = reversString + compiled.charAt(i);
+            reversString += compiled.charAt(i);
         }
-
         if(compiled.equals(reversString)){
             isBoolean = true;
         }
 
         if(isBoolean){
-            System.out.println(" *** This is a Palidrone Test : **** ");
-            System.out.println("String is a palidone");
-            return compiled + " is a Palidone";
+            System.out.println("True");
+            return true;
         } else {
-            System.out.println(" *** This is a Palidrone Test : **** ");
-            System.out.println("String isn't a palidone");
-            return compiled + " isn't a Palidone";
+            System.out.println("false");
+            return false;
         }
     }
 

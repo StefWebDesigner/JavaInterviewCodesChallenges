@@ -1,8 +1,6 @@
 package org.example;
 
-import org.example.classbox.MajorityElement;
-import org.example.classbox.RemoveDuplicates;
-import org.example.classbox.RemoveElement;
+import org.example.classbox.*;
 import org.example.codeClasses.*;
 import org.example.practiceDemos.OutputReviewChallenges;
 
@@ -215,6 +213,16 @@ public class Main {
         MajorityElement majorityElement = new MajorityElement();
         majorityElement.majorityElement(arr77);
 
+        LengthOfLastWord lengthOfLastWord = new LengthOfLastWord();
+        lengthOfLastWord.lengthOfLastWord("   fly me   to   the moon  ");
+
+        String[] strs = {"flower","flow","flight"};
+//        String[] strs = {"dog","racecar","car"};
+        LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
+        longestCommonPrefix.longestCommonPrefix();
+
+        ValidPalidrone validPalidrone = new ValidPalidrone();
+        validPalidrone.isPalindrome();
     }
 
 
