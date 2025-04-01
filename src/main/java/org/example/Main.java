@@ -222,7 +222,9 @@ public class Main {
         longestCommonPrefix.longestCommonPrefix();
 
         ValidPalidrone validPalidrone = new ValidPalidrone();
-        validPalidrone.isPalindrome();
+//        validPalidrone.isPalindrome();
+        IsSubsequence isSubsequence = new IsSubsequence();
+        isSubsequence.isSubsequenceReal();
     }
 
 
