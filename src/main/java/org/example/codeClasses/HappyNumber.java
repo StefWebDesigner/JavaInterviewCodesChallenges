@@ -2,8 +2,7 @@ package org.example.codeClasses;
 
 public class HappyNumber {
 
-    static boolean isHappynumber(int n)
-    {
+    public boolean isHappynumber(int n) {
         int sum = n, x = n;
 
         // this loop executes till the sum of square of
