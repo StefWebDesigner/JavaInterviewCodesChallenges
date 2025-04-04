@@ -1,4 +1,4 @@
-package org.example.codeClasses;
+   package org.example.codeClasses;
 
 public class InsertSort {
 
@@ -22,6 +22,5 @@ public class InsertSort {
         }
 
         return index;
-
     }
 }
