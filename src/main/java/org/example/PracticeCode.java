@@ -9,18 +9,18 @@ import java.util.stream.Collectors;
 public class PracticeCode {
 
 
-//    public boolean isPalidrone(){
-//        String s = "hannah";
-//
-//        int l = 0;
-//        int r = s.length() -1;
-//
-//        while(l < r){
-//
-//        }
-//
-//    }
+    public String revereArrayWords(String word){
+        String[] wordArray = word.split(" ");
+        String reversString = "";
 
+        for(int i = wordArray.length - 1; i >= 0; i--) {
+            reversString += reversString + wordArray[i] + " ";
+        }
+        return reversString;
+
+
+
+    }
 
 
 }
