@@ -223,14 +223,6 @@ public class StreamExampleStuff {
 
     }
 
-
-    //________ Extra STuff to try
-
-    // --- Learn how to use collect(Collect -> mapTo
-    // reduce
-    //flatmap
-    //averagingDoubling
-
     public void givenStringStream_whenConvertingToMapWithStreamReduce_thenExpectedMapIsGenerated() {
         Stream<String> stringStream = Stream.of("one", "two", "three", "two");
 
@@ -260,69 +252,6 @@ public class StreamExampleStuff {
 
             data.forEach((user, score) -> System.out.println(user + " scored: " + score));
         }
-
-
-//Apply this to my code****
-//    paratemrs of a lambda
-//	* Lambda --- (String s) -> s.toUpperCase()
-//
-//            * String::toUpperCase
-//
-//
-//
-//    	* () -> books.size() --- lambda
-//	* books::size
-//
-
-//    List<Order> orders = …
-//            Collections.sort(orders,
-//    comparing(Order::getAmount).
-//
-//            orders.stream()
-//            .filter(o -> o.getSide() == BUY)
-//            .sorted(comparing(Order::getAmount))
-//            .forEach(System.out::println);
-
-//    What are some examples of these operations?
-//            * Summming  - to group by order by currency and sum up
-//    List<Order> orders = …
-//    Map<Currency, Double> orderTotalByCurrency =
-//            orders
-//                    .stream()
-//                    .collect(groupingBy(Order::getCurrency,				                     summingDouble(Order::getAmount) ));
-//
-//System.out.println("\nOrder total per currency ");
-//orderTotalByCurrency.forEach((c, a)->
-//            System.out.printf("%s: total order value %.2f%n", c, a));
-//
-//* Averaging – uses averagingDouble()
-//    List<Order> orders = …
-//    Double averageOrderAmount =
-//            orders
-//                    .stream()
-//                    .collect(averagingDouble(o-> o.getAmount()));
-//
-//System.out.printf("%nAverage amount of each order is %.2f %n", 				                    averageOrderAmount);
-//*Summarazing – uses summarizingDouble ()  and rutnr statics of double values functions
-//    List<Order> orders = …
-//    DoubleSummaryStatistics amountSummary =
-//            orders
-//                    .stream()
-//                    .collect(summarizingDouble(o-> o.getAmount()));
-//
-//System.out.printf("Order Amount Summary %s %n", amountSummary);
-//    Order Amount Summary DoubleSummaryStatistics{count=10, sum=35800000.000000, min=1000000.000000, average=3580000.000000, max=9800000.000000}
-//
-//* Maximum with maxBy()  & returns an optional
-//
-//    What are flatmap operations?
-//            * considering using streams processing to determine the number of unique words in a file
-//* Files.lines(Paths.get("test.txt"))
-//        .map(line -> line.split("\\s+"))
-//            .flatMap(Arrays::stream)
-//	.di	.forEach(System.out::println);
-//    stinct()
-
 
 
 }

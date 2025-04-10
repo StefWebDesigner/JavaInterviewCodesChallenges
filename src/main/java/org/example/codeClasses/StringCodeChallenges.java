@@ -23,7 +23,6 @@ public class StringCodeChallenges {
         List<String> masterList = Arrays.asList(word.split(" "));
         System.out.println(masterList);
         return masterList;
-
     }
 
     public String encryptionCodeChallenge(String message, int shiftKey){
