@@ -242,10 +242,10 @@ public class Main {
         intToRoman.romanToInt("MCMXCIV");
 
         ReverseStringCreateWords reverseStringCreateWords = new ReverseStringCreateWords();
-//        reverseStringCreateWords.reverseWords("The sky is blue");
         reverseStringCreateWords.reverseWords("the sky is blue");
 
-
+        ParsingCasting parsingCasting = new ParsingCasting();
+        parsingCasting.parseCharToInteger();
 
 
     }
