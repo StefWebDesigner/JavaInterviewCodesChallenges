@@ -247,6 +247,9 @@ public class Main {
         ParsingCasting parsingCasting = new ParsingCasting();
         parsingCasting.parseCharToInteger();
 
+        LetterCombinationPhoneNumber letterCombinationPhoneNumber = new LetterCombinationPhoneNumber();
+        letterCombinationPhoneNumber.letterCombinations();
+
 
     }
 
