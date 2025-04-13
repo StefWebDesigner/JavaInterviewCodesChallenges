@@ -248,8 +248,10 @@ public class Main {
         parsingCasting.parseCharToInteger();
 
         LetterCombinationPhoneNumber letterCombinationPhoneNumber = new LetterCombinationPhoneNumber();
-        letterCombinationPhoneNumber.letterCombinations();
 
+        FirstLastPositionOfElement firstLastPositionOfElement = new FirstLastPositionOfElement();
+        int[] nums8 = {5,7,7,8,8,10};
+        firstLastPositionOfElement.searchRange();
 
     }
 

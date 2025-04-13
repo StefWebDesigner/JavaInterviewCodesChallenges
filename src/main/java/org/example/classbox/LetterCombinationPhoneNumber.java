@@ -13,7 +13,7 @@ public class LetterCombinationPhoneNumber {
 
         for(char digit : digits.toCharArray()){
             List<String> temp = new ArrayList<>();
-            String letters = phoneMapping[digit-'0'];
+            String letters = phoneMapping[Character.getNumericValue(digit)];
             System.out.println("letters: " + letters);
             System.out.println("result" + result);
 
@@ -30,6 +30,8 @@ public class LetterCombinationPhoneNumber {
 
         return result;
     }
+
+
 
 
 
