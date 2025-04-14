@@ -1,6 +1,8 @@
 package org.example;
 
 import org.example.classbox.*;
+import org.example.classbox.medium.RemoveDuplicatesSortedArrayII;
+import org.example.classbox.medium.RotateArray;
 import org.example.codeClasses.*;
 import org.example.practiceDemos.OutputReviewChallenges;
 
@@ -255,6 +257,21 @@ public class Main {
 
         MigrationBird migrationBird = new MigrationBird();
         migrationBird.birdCount();
+
+        IsIsomorphic isomorphicStrings2 = new IsIsomorphic();
+//        isomorphicStrings2.isIsomorphic("car", "car");
+
+        DiscountPrice discountPrice = new DiscountPrice();
+        discountPrice.discount(1500, 50);
+
+        RemoveDuplicatesSortedArrayII removesortedArrayII = new RemoveDuplicatesSortedArrayII();
+        int[] nums9 = {1,1,1,2,2,3};
+        removesortedArrayII.removeDuplicates(nums9);
+
+        RotateArray rotateArray = new RotateArray();
+        int[] nums10 = {1,2,3,4,5,6,7};
+        int k2 = 3;
+        rotateArray.rotate(nums10, k2);
 
     }
 

@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class IsIsomorphic {
     //Where the position of the words have to be the same
-    public Boolean isIsomorphic(String a, String b) {
+    public Boolean isIsomorphic2(String a, String b) {
         if (a.length() != b.length()) {
             return false;
         } else {
@@ -34,5 +34,46 @@ public class IsIsomorphic {
             return true;
         }
     }
+//
+//    public Boolean isIsomorphic(String wordOne, String wordTwo) {
+//        if (wordOne.length() != wordTwo.length()) {
+//            System.out.println("false");
+//            return false;
+//        } else {
+//            Map<Character, Integer> aMap = new HashMap<>();
+//            Map<Character, Integer> bMap = new HashMap<>();
+//
+//            Integer index = 0;
+//            for (char a : wordOne.toCharArray()) {
+//                for (char b : wordTwo.toCharArray()) {
+//                    char elementA = a;
+//                    char elementB = b;
+//
+//                    if (!aMap.containsKey(elementA)) {
+//                        aMap.put(elementA, index);
+//                    }
+//
+//                    if (!bMap.containsKey(elementB)) {
+//                        bMap.put(elementB, index);
+//                    }
+//
+//                    if (!aMap.get(a).equals(bMap.get(b))) {
+//                        System.out.println("false");
+//                        return false;
+//                    }
+//                    index++;
+//                }
+//
+//            }
+//            System.out.println("true");
+//            return true;
+//
+//
+//        }
+//    }
+
+
+
+
 }
 
