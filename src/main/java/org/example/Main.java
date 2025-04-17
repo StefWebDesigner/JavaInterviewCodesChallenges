@@ -1,8 +1,10 @@
 package org.example;
 
 import org.example.classbox.*;
+import org.example.classbox.medium.FindSumTriplet;
 import org.example.classbox.medium.RemoveDuplicatesSortedArrayII;
 import org.example.classbox.medium.RotateArray;
+import org.example.classbox.medium.ThreeSum;
 import org.example.codeClasses.*;
 import org.example.practiceDemos.OutputReviewChallenges;
 
@@ -272,6 +274,10 @@ public class Main {
         int[] nums10 = {1,2,3,4,5,6,7};
         int k2 = 3;
         rotateArray.rotate(nums10, k2);
+
+        int[] nums11 = {1,2,3,4,5,6,7};
+        FindSumTriplet threeSum = new FindSumTriplet();
+        threeSum.findTriplets(nums11, 13);
 
     }
 
