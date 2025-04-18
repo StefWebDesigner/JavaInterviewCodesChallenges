@@ -10,6 +10,14 @@ import java.util.stream.Stream;
 
 public class OutputReviewChallenges {
 
+
+    public String addSum (int num1, int num2) {
+        int sum = num1 + num2;
+        return String.valueOf(sum);
+
+    }
+
+
     public Map<Character, Integer> stringToMap(){
         String word = "mmmooobbkkeeeyy";
         Stream<Character> characterStream = word.chars().mapToObj(c -> (char) c);

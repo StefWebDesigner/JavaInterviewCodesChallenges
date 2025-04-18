@@ -12,6 +12,5 @@ public class TwoSumsII {
                 --r;
 
         return new int[] {l + 1, r + 1};
-
     }
 }
