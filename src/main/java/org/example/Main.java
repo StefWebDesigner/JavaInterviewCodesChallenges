@@ -281,6 +281,11 @@ public class Main {
 
         CountFairPair countFairPair = new CountFairPair();
         countFairPair.countFairPairs();
+
+        Zigzag zigzag = new Zigzag();
+        zigzag.convert("PAYPALISHIRING", 3);
+
+
     }
 
 
