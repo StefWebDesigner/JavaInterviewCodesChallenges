@@ -279,6 +279,8 @@ public class Main {
         LongestPalidroneInAString longestPalidroneInAString = new LongestPalidroneInAString();
         longestPalidroneInAString.longestPalindrome("yaabccbax");
 
+        CountFairPair countFairPair = new CountFairPair();
+        countFairPair.countFairPairs();
     }
 
 
