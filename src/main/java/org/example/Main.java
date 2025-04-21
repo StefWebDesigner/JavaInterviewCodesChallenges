@@ -288,6 +288,9 @@ public class Main {
         CharacterColumnLexi  characterColumnLexi = new CharacterColumnLexi();
         characterColumnLexi.convert();
 
+        ReverseInteger reverseInteger = new ReverseInteger();
+        reverseInteger.reverse(-123);
+
 
     }
 
