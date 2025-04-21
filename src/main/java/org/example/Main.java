@@ -285,6 +285,9 @@ public class Main {
         Zigzag zigzag = new Zigzag();
         zigzag.convert("PAYPALISHIRING", 3);
 
+        CharacterColumnLexi  characterColumnLexi = new CharacterColumnLexi();
+        characterColumnLexi.convert();
+
 
     }
 
