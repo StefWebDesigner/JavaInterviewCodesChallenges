@@ -7,6 +7,9 @@ import java.util.List;
 
 public class CharacterColumnLexi {
 
+    //Convert the string array and create a new string array that uses the index of each of theses strings
+    //Then, take lexigraphically find the shortest string
+
     public String convert() {
         String [] strArray = {"abc", "def", "ghi", "adg", "beh", "cfi"};
         List<String> list = new ArrayList<>();
