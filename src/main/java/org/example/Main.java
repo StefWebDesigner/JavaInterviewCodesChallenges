@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.assessment.CountFairPair;
+import org.example.assessment.LongestPalidroneInAString;
+import org.example.assessment.MakeArrayPositive;
+import org.example.assessment.MaximizeTheRevenue;
 import org.example.classbox.*;
 import org.example.classbox.medium.*;
 import org.example.codeClasses.*;
@@ -304,6 +308,12 @@ public class Main {
         };
         rotateImageMatrix.rotate2(map);
 
+        MaximizeTheRevenue maximizeTheRevenue = new MaximizeTheRevenue();
+        maximizeTheRevenue.maximizeTheRevenue();
+
+
+        MakeArrayPositive makeArrayPositive = new MakeArrayPositive();
+        makeArrayPositive.minPositiveArray();
 
     }
 
