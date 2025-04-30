@@ -17,7 +17,9 @@ public Integer minPositiveArray() {
 
     for (int num : numbers) {
         currentSum += num;
+        System.out.println("current sum : " + currentSum);
         minSum = Math.min(minSum, currentSum);
+        System.out.println("min sum : " + minSum);
     }
 
     Integer result = Math.max(1, 1 - minSum);

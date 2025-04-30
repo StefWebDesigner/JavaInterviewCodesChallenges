@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.assessment.CountFairPair;
-import org.example.assessment.LongestPalidroneInAString;
-import org.example.assessment.MakeArrayPositive;
-import org.example.assessment.MaximizeTheRevenue;
+import org.example.assessment.*;
 import org.example.classbox.*;
 import org.example.classbox.medium.*;
 import org.example.codeClasses.*;
@@ -314,6 +311,17 @@ public class Main {
 
         MakeArrayPositive makeArrayPositive = new MakeArrayPositive();
         makeArrayPositive.minPositiveArray();
+
+        BinarySearchInterationTerrible binarySearchInterationTerrible = new BinarySearchInterationTerrible();
+        binarySearchInterationTerrible.binarySearch();;
+
+        int[] array = {-1, 5, 6, 8, 9, 11, 14, 17, 18, 20};
+    int l4 = 0;
+    int r4 = array.length - 1;
+    int target4 = 20;
+
+    BinarySearchRecursiveBetter binarySearchRecursiveBetter = new BinarySearchRecursiveBetter();
+    binarySearchRecursiveBetter.binarySearch(array, l4, r4, target4);
 
     }
 
