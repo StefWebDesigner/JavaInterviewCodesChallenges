@@ -17,12 +17,12 @@ public class BinarySearchRecursiveBetter {
                 System.out.println(mid);
                 return mid;
             }
-            if(array[mid] > target) {
-                int result = binarySearch(array, l, mid - 1, target);
+            if(target > array[mid]) {
+                int result = binarySearch(array, mid + 1, r, target);
                 System.out.println(result);
                 return result;
             } else {
-                int result = binarySearch(array,  mid + 1, r, target);
+                int result = binarySearch(array,  l, mid - 1, target);
                 System.out.println(result);
                 return result;
             }
