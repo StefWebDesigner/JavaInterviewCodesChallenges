@@ -2,7 +2,8 @@ package org.example.assessment;
 
 public class LongestPalidroneInAString {
 
-    public String longestPalindrome(String s) {
+    public String longestPalindrome() {
+        String s = "yaabccbax";
         if (s == null || s.length() < 1) return "";
         int start = 0;
         int end = 0;
@@ -11,6 +12,7 @@ public class LongestPalidroneInAString {
             int len2 = expandAroundCenter(s, i, i + 1);
             int len = Math.max(len1, len2);
             if (len > end - start + 1) {
+                //Rememeber these steps!!!!
                 start = i - (len - 1) / 2;
                 end = i + len / 2;
             }
@@ -21,13 +23,14 @@ public class LongestPalidroneInAString {
         return res;
     }
 
-    private int expandAroundCenter(String s, int left, int right) {
-        int L = left, R = right;
-        while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
-            L--;
-            R++;
+    private int expandAroundCenter(String s, int l, int r) {
+        while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
+            l--;
+            r++;
         }
-        return R - L - 1;
+
+        int response = r - l - 1;
+        return response;
     }
 
 }

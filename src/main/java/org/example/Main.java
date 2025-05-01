@@ -277,8 +277,6 @@ public class Main {
         FindSumTriplet threeSum = new FindSumTriplet();
         threeSum.findTriplets(nums11, 13);
 
-        LongestPalidroneInAString longestPalidroneInAString = new LongestPalidroneInAString();
-        longestPalidroneInAString.longestPalindrome("yaabccbax");
 
         CountFairPair countFairPair = new CountFairPair();
         countFairPair.countFairPairs();
@@ -322,6 +320,14 @@ public class Main {
 
     BinarySearchRecursiveBetter binarySearchRecursiveBetter = new BinarySearchRecursiveBetter();
     binarySearchRecursiveBetter.binarySearch(array, l4, r4, target4);
+
+    LongestPalidroneInAString longestPalidroneInAString = new LongestPalidroneInAString();
+    longestPalidroneInAString.longestPalindrome();
+
+
+    ThreeSum threeSum2 = new ThreeSum();
+        int[] num9 = {-1,0,1,2,-1,-4};
+        threeSum2.threeSum(num9, 3);
 
     }
 
