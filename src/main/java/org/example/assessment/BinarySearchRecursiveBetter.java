@@ -10,7 +10,6 @@ public class BinarySearchRecursiveBetter {
 
     public int binarySearch(int[] array, int l, int r, int target) {
 
-
         if(r >= l && l <= array.length - 1) {
             int mid = l + (r - l) / 2;
             if(array[mid] == target){
@@ -30,7 +29,4 @@ public class BinarySearchRecursiveBetter {
         return -1;
     }
 
-//    public int[] searchInteration(int[] array, int arraySize, int target, int start, int end) {
-//
-//    }
 }

@@ -1,4 +1,4 @@
-package org.example.classbox;
+package org.example.assessment;
 
 import java.util.ArrayList;
 import java.util.List;

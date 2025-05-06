@@ -4,6 +4,7 @@ import org.example.assessment.*;
 import org.example.classbox.*;
 import org.example.classbox.medium.*;
 import org.example.codeClasses.*;
+import org.example.practiceDemos.FinalTest;
 import org.example.practiceDemos.OutputReviewChallenges;
 
 import java.io.*;
@@ -249,7 +250,7 @@ public class Main {
         ParsingCasting parsingCasting = new ParsingCasting();
         parsingCasting.parseCharToInteger();
 
-        LetterCombinationPhoneNumber letterCombinationPhoneNumber = new LetterCombinationPhoneNumber();
+//        LetterCombinationPhoneNumber letterCombinationPhoneNumber = new LetterCombinationPhoneNumber();
 
         FirstLastPositionOfElement firstLastPositionOfElement = new FirstLastPositionOfElement();
         int[] nums8 = {5,7,7,8,8,10};
@@ -327,7 +328,12 @@ public class Main {
 
     ThreeSum threeSum2 = new ThreeSum();
         int[] num9 = {-1,0,1,2,-1,-4};
-        threeSum2.threeSum(num9, 3);
+
+        FinalTest  finalTest = new FinalTest();
+        finalTest.mergeTwoList();
+
+
+
 
     }
 
