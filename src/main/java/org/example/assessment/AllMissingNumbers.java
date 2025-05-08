@@ -31,14 +31,17 @@ public class AllMissingNumbers {
         Set<Integer> allNumbers = new HashSet<>(set1);
         allNumbers.addAll(set2);
 
+        // Setting the min / max limits
         int min = Integer.MAX_VALUE;
         int max = Integer.MIN_VALUE;
 
+        // Just finding those min and max number
         for (int num : allNumbers) {
             min = Math.min(min, num);
             max = Math.max(max, num);
         }
 
+        // add all numbers that are not found int the array
         List<Integer> result = new ArrayList<>();
         for (int i = min; i <= max; i++) {
             if (!set1.contains(i) && !set2.contains(i)) {
