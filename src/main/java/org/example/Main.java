@@ -2,6 +2,8 @@ package org.example;
 
 import org.example.assessment.*;
 import org.example.classbox.*;
+import org.example.classbox.SeralizationClasses.Emp;
+import org.example.classbox.SeralizationClasses.SerialExample;
 import org.example.classbox.medium.*;
 import org.example.codeClasses.*;
 import org.example.practiceDemos.FinalTest;
@@ -338,9 +340,48 @@ public class Main {
         LongestSubstringNonRepeatingChar longestSubstringNonRepeatingChar = new LongestSubstringNonRepeatingChar();
         longestSubstringNonRepeatingChar.lengthOfLongestSubstring("pwwkew");
 
+        Emp emp = new Emp(20, "Stefan", 30, 1000);
+        String serializationExample = "emp.txt";
 
+        //Serialization
+        try{
+            FileOutputStream file = new FileOutputStream(serializationExample);
+            ObjectOutputStream out = new ObjectOutputStream(file);
 
+            //Method for seralization of an object
+            out.writeObject(emp);
+            out.close();
+            file.close();
 
+            System.out.println("Object has been serialized" + serializationExample + " data before serialization");
+
+            SerialExample serialExample = new SerialExample();
+            serialExample.printData(emp);
+
+            // value of static variable changed
+            Emp.b = 2000;
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        }
+
+        emp = null;
+
+        //Deserialization
+        try{
+            //Reading the object from a file
+            FileInputStream file = new FileInputStream(serializationExample);
+            ObjectInputStream in = new ObjectInputStream(file);
+
+            emp = (Emp) in.readObject();
+            in.close();
+            file.close();
+            System.out.println("Object has been deserialized" + serializationExample + " data after deserialization");
+            SerialExample serialExample = new SerialExample();
+            serialExample.printData(emp);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 
