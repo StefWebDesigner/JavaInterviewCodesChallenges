@@ -1,7 +1,6 @@
-package org.example.classbox.medium;
+package org.example.assessment;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class LongestSubstringNonRepeatingChar {
 
@@ -19,11 +18,12 @@ public class LongestSubstringNonRepeatingChar {
         List<String> temp = new ArrayList<>();
 
          for (int i = 0; i < s.length(); i++) {
-            if(i == 0 ){
+             // condition for if i is zero to start the locking]
+             if(i == 0 ){
                 startLock = true;
                 start = i;
             }
-            if(i == s.length()){
+             if(i == s.length()){
                 end = s.length();
                 startLock = false;
                 end = counter;
