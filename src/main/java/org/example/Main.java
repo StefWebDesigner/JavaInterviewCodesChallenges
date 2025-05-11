@@ -332,6 +332,12 @@ public class Main {
         FinalTest  finalTest = new FinalTest();
         finalTest.mergeTwoList();
 
+    MinEqualSumAfterReplZero minEqualSumAfterReplZero = new MinEqualSumAfterReplZero();
+//    minEqualSumAfterReplZero.minSum();
+
+        LongestSubstringNonRepeatingChar longestSubstringNonRepeatingChar = new LongestSubstringNonRepeatingChar();
+        longestSubstringNonRepeatingChar.lengthOfLongestSubstring("pwwkew");
+
 
 
 

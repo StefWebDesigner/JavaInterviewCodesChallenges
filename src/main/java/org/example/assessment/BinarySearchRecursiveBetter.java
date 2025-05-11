@@ -10,6 +10,7 @@ public class BinarySearchRecursiveBetter {
 
     public int binarySearch(int[] array, int l, int r, int target) {
 
+        // I always forget the l <= r
         if(r >= l && l <= array.length - 1) {
             int mid = l + (r - l) / 2;
             if(array[mid] == target){
